@@ -1,31 +1,53 @@
 #include <stdio.h>
+#include <float.h>
 
+int main(void)
+{ // Ponto de entrada do Programa
 
-int main(void) { // Ponto de entrada do Programa 
-  
-  printf("Declaração de Variáveis\n");
-  float x;        	// declarando uma variável de ponto flutuante
-  x = (float) 1.0;	// inicializando a variável co um casting
-  // Modificadores 
-  double y = 2.0;  	// declarando e inicializando
-  long double  z= 4.0;
-  // Lembrandop da necessidade de inicializar as variáveis
-  
+	printf("Declaração de Variáveis\n");
+	float x;		// declarando uma variável de ponto flutuante
+
+	x = (float)1.0; // inicializando a variável com casting
+	printf("float: %d\n", sizeof(float));
+	printf("Valor máximo de um float = %.10e\n", FLT_MAX);
+	printf("Valor mínimo de um float = %.10e\n", FLT_MIN);
+	printf("Número de dígitos de um float = %.10e\n", FLT_MANT_DIG);
+
+	double y = 2.0; // declarando e inicializando
+	printf("double: %d\n", sizeof(double));
+	printf("Valor máximo de um double = %.10e\n", DBL_MAX);
+	printf("Valor mínimo de um double = %.10e\n", DBL_MIN);
+	printf("Número de dígitos de um double = %.10e\n", DBL_MANT_DIG);
+	// Modificadores
+	printf("long double: %d\n", sizeof(long double));
+	printf("Valor máximo de um long double = %Le\n", LDBL_MAX);
+	printf("Valor mínimo de um long double = %Le\n", LDBL_MIN);
+	printf("Número de dígitos de um double = %Lf\n", LDBL_MANT_DIG);
+	long double z = 4.0;
+
+	printf("Para continuar entre com um float: ");
+	scanf("%f", &x);
+
+	// Lembrandop da necessidade de inicializar as variáveis
 
 	printf("Declaração e Inicialização de Variáveis\n");
-  printf("Variáveis float: %.2f, %.2f, %.2Lf\n", x, y, z);
+	printf("Variáveis float: %.2f, %.2f, %.2Lf\n", x, y, z);
 	printf("________________________________________\n");
 	//Operadores com int
 	printf("Operadores con float\n");
 	printf("________________________________________\n");
 	printf("Operador de atribuição\n");
-	y = 5.0; 						// Operador de atribuição
-	double y1, y2,y3, y4, y5;
+	y = 5.0; // Operador de atribuição
+	double y1, y2, y3, y4, y5;
 	//atribuições múltiplas em um único comando
-	y1 = y2 = y3 = y4 = y5 = y; 
+	y1 = y2 = y3 = y4 = y5 = y;
 	printf("y = %f, y1 = %f, y2 = %f\n", y, y1, y2);
 	printf("y3 = %f, y4 = %f, y5 = %f\n", y3, y4, y5);
 	printf("________________________________________\n");
+
+	printf("Para continuar entre com um float: ");
+	scanf("%f", &x);
+
 	//Operadores Aritméticos
 	printf("Operadores binarios\n");
 	// Operadores binários
@@ -37,11 +59,15 @@ int main(void) { // Ponto de entrada do Programa
 	printf("-%f = %f\n", y5, y4);
 	y2 = y1 * y3; //multiplicação
 	printf("%f * %f = %f\n", y1, y3, y2);
-	y = 4 / 2.0; //Divisão inteira
+	y = 4 / 2.0; //Divisão 
 	printf("4 / 2.0 = %f\n", y);
-	y = 5.0 / 2; //Divisão inteira (truncada)
+	y = 5.0 / 2; //Divisão 
 	printf("5.0 / 2 = %f\n", y);
 	printf("________________________________________\n");
+
+	printf("Para continuar entre com um float: ");
+	scanf("%f", &x);
+
 	//Operadores compostos
 	printf("Operadores de Compostos\n");
 	printf("y = %f\n", y);
@@ -54,6 +80,10 @@ int main(void) { // Ponto de entrada do Programa
 	y /= 2; //y = y/2
 	printf("y /= 2 -> y = %f\n", y);
 	printf("________________________________________\n");
+
+	printf("Para continuar entre com um float: ");
+	scanf("%f", &x);
+
 	//Operadores Relacionais
 	printf("Operadores de Relacionais\n");
 	printf("%f > %f = %d\n", y1, y2, y1 > y2);
@@ -63,7 +93,6 @@ int main(void) { // Ponto de entrada do Programa
 	printf("%f == %f = %d\n", y5, y1, y5 == y1);
 	printf("%f != %f = %d\n", y5, y1, y5 != y1);
 	printf("________________________________________\n");
-		
-  return 0;
 
+	return 0;
 }
