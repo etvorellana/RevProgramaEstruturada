@@ -1,0 +1,1 @@
+void jogaOsDados(int, int, int, int);

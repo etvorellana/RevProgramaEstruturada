@@ -4,7 +4,8 @@ CFLAGS = -O2 -lm
 
 all: 	exemplo_00 exemplo_01 exemplo_02 exemplo_03 \
 			exemplo_04 exemplo_05 exemplo_06 exemplo_07 \
-			exemplo_08 exemplo_09 exemplo_10 exemplo_11
+			exemplo_08 exemplo_09 exemplo_10 exemplo_11\
+			exemplo_06a exemplo_06b exemplo_06c
 
 
 
@@ -28,6 +29,19 @@ exemplo_05: main_05.c
 
 exemplo_06: main_06.c
 	$(CC) $(CFLAGS) main_06.c -o exemplo_06
+
+exemplo_06a: main_06a.c
+	$(CC) $(CFLAGS) main_06a.c -o exemplo_06a
+
+exemplo_06b: main_06b.c
+	$(CC) $(CFLAGS) main_06b.c -o exemplo_06b
+
+mylibrary.o: mylibrary.c
+	$(CC) $(CFLAGS) -c mylibrary.c -o mylibrary.o 
+
+exemplo_06c: main_06c.c mylibrary.o
+	$(CC) $(CFLAGS) -c main_06c.c -o main_06c.o
+	$(CC) $(CFLAGS)  mylibrary.o main_06c.o -o exemplo_06c
 
 exemplo_07: main_07.c
 	$(CC) $(CFLAGS) main_07.c -o exemplo_07
